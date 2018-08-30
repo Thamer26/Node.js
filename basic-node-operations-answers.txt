@@ -1,0 +1,37 @@
+Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+- sort: output = all code sorted alphabetically by line, within their respective brackets (this is what sort does).
+- wc: output = 42  121 1158 commands.js. wc is showing us the number of lines, words, and characters in commands.js
+- uniq: output = all the code in the file. This is because uniq is looking for repeated lines to remove, since there are none, it displays all code.
+
+Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+- touch pipe-example.txt | echo $(date) "hi!" >> pipe-example.txt | uniq pipe-example.txt
+- output =  Wed, Jun 06, 2018 12:33:30 PM hi!
+
+Programming Questions
+Implement the head command in the commands.js file. The head command outputs the first n lines of a file (you may decide what n is). This function will be similar to cat in structure so it will be helpful to reference.
+
+Implement the tail command in the commands.js file. The tail command is the inverse of the head command. It outputs the last n lines of a file (you may decide what n is).
+It is possible that a user will input a non-existent command to our bash shell. Within commands.js create an errorHandler function which will output an error message if the command cannot be found.
+
+Hint: Use the default: case in your switch statement.
+
+
+My working reverse string function:
+
+const reverse = (string) => {
+
+  let letters = [];
+  let reversed = [];
+
+  for (let i in string) {
+    letters.push(string[i]);
+  }
+
+  for (let n = letters.length; n >= 0; n--) {
+    reversed.push(letters[n]);
+  }
+
+  return reversed.join("");
+}
+
+console.log(reverse("Bloc is fun!")); 
